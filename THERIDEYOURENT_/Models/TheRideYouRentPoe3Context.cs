@@ -47,7 +47,7 @@ public partial class TheRideYouRentPoe3Context : DbContext
 
             IConfiguration configuration = new ConfigurationBuilder().SetBasePath(AppDomain.CurrentDomain.BaseDirectory).AddJsonFile("appsettings.json").Build();
             optionsBuilder.UseSqlServer(configuration.GetConnectionString("MyConnectionStringDev"));
-          //  optionsBuilder.UseSqlServer(configuration.GetConnectionString("MyConnectionStringAZURE"));
+          //   optionsBuilder.UseSqlServer(configuration.GetConnectionString("MyConnectionStringAZURE"));
 
         }
 
