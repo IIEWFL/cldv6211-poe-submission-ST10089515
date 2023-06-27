@@ -1,0 +1,66 @@
+﻿@model IEnumerable<THERIDEYOURENT_.Models.Return>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               RETURN DATE
+            </th>
+            <th>
+                ELAPESED DATE
+            </th>
+            <th>
+               FINE
+            </th>
+            <th>
+                CAR NUMBER
+            </th>
+            <th>
+                DRIVER
+            </th>
+            <th>
+               INSPECTOR
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ElapsedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarNoNavigation.CarNo)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.Driver.Name)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.InspectorNoNavigation.Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ReturnId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ReturnId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ReturnId">Delete</a> |
+                <a asp-action="CalculateDriverFine" asp-route-id="@item.ReturnId">CalculateDriverFine</a> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

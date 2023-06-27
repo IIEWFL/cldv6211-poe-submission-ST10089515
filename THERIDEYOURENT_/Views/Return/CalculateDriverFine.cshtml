@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "CalculateDriverFine";
+}
+
+<h1>CalculateDriverFine</h1>
+
+@using (Html.BeginForm("CalculateDriverFine", "Return", FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="DriverId">Driver ID:</label>
+        <input type="number" class="form-control" name="DriverId" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Calculate Fine</button>
+}
+
+@if (ViewBag.DriverFine != null)
+{
+    <h3>Total Fine: @ViewBag.DriverFine</h3>
+}

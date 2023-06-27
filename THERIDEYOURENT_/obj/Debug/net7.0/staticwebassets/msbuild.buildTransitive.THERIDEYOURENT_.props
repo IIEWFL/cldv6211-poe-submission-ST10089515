@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\THERIDEYOURENT_.props" />
+</Project>
